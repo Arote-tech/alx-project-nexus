@@ -18,7 +18,7 @@ export default function ProfilePage() {
   return (
     <div>
       <Header />
-      <div className="p-6 space-y-8" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
+      <div className="p-6 space-y-4 bg-hour-glass bg-cover bg-no-repeat">
       <h1 className="text-3xl font-bold mb-4">Your Profile</h1>
 
       <section>

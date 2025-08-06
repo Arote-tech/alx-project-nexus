@@ -1,6 +1,6 @@
 {
-  "name": "MoviePro App",
-  "short_name": "App",
+  "name": "Movie Pro",
+  "short_name": "Movie Pro",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
