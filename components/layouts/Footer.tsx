@@ -11,7 +11,9 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="mt-8 text-center text-sm text-gray-400">
+        <Link href="/https://github.com/Arote-tech/alx-project-nexus">
         <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/github.png" width = {32} height = {32} alt= "github" />
+        </Link>
         <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/facebook.png" width = {32} height = {32} alt= "facebook" />
         <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/linkedin.png" width = {32} height = {32} alt= "linkedin" />
         <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/telegram.png" width = {32} height = {32} alt= "telegram" /> 

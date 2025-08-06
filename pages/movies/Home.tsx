@@ -1,20 +1,25 @@
 // pages/index.tsx
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useSession } from "next-auth/react";
 import useSWR from 'swr';
 import SearchBar from '@/components/common/SearchBar';
 import MovieList from '@/components/common/MovieList';
 import MovieCarousel from '@/components/common/MovieCarousel';
 import { fetcher } from '@/utils/api';
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import CustomLinks from "@/components/common/CustomLinks";
+import { MovieApiResponse } from '@/types/index';
+
 
 const genres = ['Action', 'Drama', 'Comedy', 'Historical', 'Fantasy'];
 
 export default function HomeScreen() {
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState('');
+  const { data: session, status } = useSession();
 
   const handleSearch = (term: string) => {
-    setSearchTerm(term);
     if (term.trim()) {
       router.push(`/movies/search?query=${encodeURIComponent(term)}`);
     }
@@ -24,16 +29,24 @@ export default function HomeScreen() {
     router.push(`/movies/search?genre=${genre}`);
   };
 
-  const { data: trendingData, isLoading: loadingTrending } = useSWR('/api/trending?page=1', fetcher);
-  const { data: recommendedData, isLoading: loadingRecommended } = useSWR('/api/recommended', fetcher);
+  const { data: trendingData, isLoading: loadingTrending } = useSWR<MovieApiResponse>('https://moviesdatabase.p.rapidapi.com/titles', fetcher);
+  const { data: recommendedData, isLoading: loadingRecommended } = useSWR<MovieApiResponse>('https://moviesdatabase.p.rapidapi.com//titles/%7Bid%7D/ratings', fetcher);
+  
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/");
+    }
+  }, [status]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="p-6 space-y-6">
-      <SearchBar
-        onSearch={handleSearch}
-        value={searchTerm}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
-      />
+    <div>
+      <Header />
+      <div className="p-6 space-y-6" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
+      <SearchBar onSearch={handleSearch} />
 
       <div className="flex gap-3 overflow-x-auto pt-2">
         {genres.map((genre) => (
@@ -46,7 +59,7 @@ export default function HomeScreen() {
           </button>
         ))}
       </div>
-
+      <h1>Welcome back, {session?.user?.name || "user"}!</h1>
       <h2 className="text-xl font-semibold mt-4">Trending Movies</h2>
       {loadingTrending ? (
         <p>Loading trending...</p>
@@ -54,38 +67,18 @@ export default function HomeScreen() {
         <MovieList movies={trendingData?.results || []} />
       )}
 
+
       <h2 className="text-xl font-semibold mt-6">Recommended Movies</h2>
       {loadingRecommended ? (
         <p>Loading recommended...</p>
       ) : (
         <MovieCarousel movies={recommendedData?.results || []} />
       )}
+
     </div>
+    <CustomLinks />
+    <Footer />
+
+  </div>
   );
 }
-
-interface Props {
-  onSearch: (term: string) => void;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const SearchBar = ({ onSearch, value, onChange }: Props) => {
-  return (
-    <div className="flex items-center">
-      <input
-        type="text"
-        value={value}
-        onChange={onChange}
-        className="flex-1 p-2 border rounded-l"
-        placeholder="Search for movies..."
-      />
-      <button
-        onClick={() => onSearch(value)}
-        className="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700"
-      >
-        Search
-      </button>
-    </div>
-  );
-};
