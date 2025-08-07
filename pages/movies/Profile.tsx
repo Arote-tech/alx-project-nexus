@@ -18,7 +18,7 @@ export default function ProfilePage() {
   return (
     <div>
       <Header />
-      <div className="p-6 space-y-4 bg-hour-glass bg-cover bg-no-repeat">
+      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
       <h1 className="text-3xl font-bold mb-4">Your Profile</h1>
 
       <section>
@@ -26,7 +26,7 @@ export default function ProfilePage() {
         {loadingDownloads ? (
           <p>Loading downloads...</p>
         ) : (
-          <MovieList movies={[]} />
+          <MovieList movies={downloads||[]} />
         )}
       </section>
 
@@ -35,7 +35,7 @@ export default function ProfilePage() {
         {loadingWatchlist ? (
           <p>Loading watchlist...</p>
         ) : (
-          <MovieCarousel movies={[]} />
+          <MovieCarousel movies={watchlist||[]} />
         )}
       </section>
 
@@ -44,7 +44,7 @@ export default function ProfilePage() {
         {loadingRated ? (
           <p>Loading rated movies...</p>
         ) : (
-          <MovieCarousel movies={[]} />
+          <MovieCarousel movies={rated||[]} />
         )}
       </section>
     </div>

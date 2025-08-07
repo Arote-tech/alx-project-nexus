@@ -13,7 +13,8 @@ const config = {
       backgroundImage: {
         'hour-glass': "url('/images/hour-glass.jpg')",
         'earth-drought':"url('/images/earth-drought.jpg')",
-        'nature-drought':"url('/images/nature-drought.jpg')"
+        'nature-drought':"url('/images/nature-drought.jpg')",
+        'Twilight': "url('/images/Twilight.jpg')"
       },
     },
   },

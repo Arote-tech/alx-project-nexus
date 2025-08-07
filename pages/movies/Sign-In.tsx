@@ -29,7 +29,7 @@ export default function SignInPage() {
   return (
     <div>
       <Header />
-      <div className="max-w-md mx-auto p-6 space-y-6" style = {{backgroundImage: `url('/images/earth-drought.jpg')`}}>
+      <div className="max-w-md min-h-screenmx-auto p-6 space-y-6 bg-earth-drought bg-cover bg-no-repeat">
       <h1 className="text-lg font-bold text-center ">Sign In With</h1>
       <div className="space-x-2 p-4 justify-center border-2 items-center align-center bg-[#D9D9D9] hover:bg-[#ffffff] transition-colors duration 300 ease-out">
         <button onClick={() => signIn('google')}>
@@ -73,7 +73,7 @@ export default function SignInPage() {
         <Link href="/Home" type="submit" className="w-full text-[#1879DB]">Sign In</Link>
         <Link href="/sign up" type="submit" className="w-full text-[#1879DB]">forgot password?</Link>
         <div className="mt-8 text-center text-sm text-gray-400">
-          <Link href='/https://github.com/Arote-tech/alx-project-nexus'><Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/github.png" width = {32} height = {32} alt= "github" /></Link>
+          <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/github.png" width = {32} height = {32} alt= "github" />
           <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/facebook.png" width = {32} height = {32} alt= "facebook" />
           <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/linkedin.png" width = {32} height = {32} alt= "linkedin" />
           <Image className="h-[30px] w-full rounded-md hover:cursor-pointer" src = "/icons/telegram.png" width = {32} height = {32} alt= "telegram" /> 
