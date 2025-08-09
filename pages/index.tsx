@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
-import CustomLinks from "@/components/common/CustomLinks"
 
 
 
@@ -23,12 +22,12 @@ export default function OnboardingPage() {
       <div className="p-4 max-w-md mx-auto space-y-4 min-h-screen bg-Twilight bg-cover bg-center bg-no-repeat">
         <h1>Welcome back, {session?.user?.name || "user"}!</h1>
         <div>
-        <h1 className="text-lg font-bold text-[#F0F1F5]">Discover the next blockbuster for
-          <span className="text-2xl font-merienda">you</span>
+        <h1 className="text-xl font-bold text-[#F0F1F5]">
+          Discover the next blockbuster for you!
         </h1>
-        <h4 className="text-sm font-merienda text-[#F0F1F5]">
-     Click <span className="text-sm font-merienda text-[#E9F909]">on the button below and 
-    make a choice among over a </span><span className="text-sm font-merienda text-[#F90909]">hundred 
+        <h4 className="text-lg font-merienda text-[#F0F1F5]">
+     Click <span className="text-md font-merienda text-[#E9F909]">on the button below and 
+    make a choice among over a </span><span className="text-md font-merienda text-[#F90909]">hundred 
    movies to watch.</span>      
         </h4>
          <Link href="/movies/Home">
@@ -39,8 +38,8 @@ export default function OnboardingPage() {
       </div>
 
        <div>
-        <h2 className="text-lg font-bold text-[#F0F1F5]">Join MoviePro Now!</h2>
-        <h4 className="text-sm font-merienda text-[#5BFF5D]">
+        <h2 className="text-xl font-bold text-[#F0F1F5]">Join MoviePro Now!</h2>
+        <h4 className="text-md font-merienda text-[#5BFF5D]">
           Sign Up today to get access to the latest movies 
 and personalized movie recommendations
         </h4>

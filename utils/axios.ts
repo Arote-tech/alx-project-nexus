@@ -1,12 +1,10 @@
-// utils/axios.ts
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://moviesdatabase.p.rapidapi.com', // all your internal API routes will start from here
+  baseURL: `https://moviesdatabase.p.rapidapi.com/titles`,
   headers: {
     'Content-Type': 'application/json',
   },
-  // You can also add interceptors here if needed
 });
 
 export default api;

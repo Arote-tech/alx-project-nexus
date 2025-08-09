@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
@@ -28,11 +29,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
      
     res.status(200).json(response.data);
-  } catch (error: any) {
-    console.error('API fetch failed:', error.response?.data || error.message);
-    res.status(500).json({ error: 'Failed to fetch data from RapidAPI' });
+  } catch (error: unknown) {
+  if (error && typeof error === 'object' && 'isAxiosError' in error) {
+    const axiosError = error as any;
+    console.error('Axios error:', axiosError.response?.data || axiosError.message);
+  } else {
+    console.error('Unknown error:', error);
   }
 }
 
 
+}
 

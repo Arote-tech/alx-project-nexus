@@ -10,31 +10,31 @@ const Footer: React.FC = () => {
          <p>&copy; 2025 MoviePro. All rights reserved.</p>
       </div>
 
-      <div className="flex flex-row justify-center place-items-baseline">
+      <div className="flex h-auto w-30 flex-row justify-center space-x-4 place-items-baseline">
         <Link href="/">
         <Image 
-        className="h-[30px] w-full rounded-md hover:cursor-pointer" 
+        className="h-auto w-full rounded-md hover:cursor-pointer" 
         src = "/icons/github.png" 
         width = {32} 
         height = {32} 
         alt= "github" />
         </Link>
         <Image 
-        className="h-[30px] w-full rounded-md hover:cursor-pointer" 
+        className="h-auto w-full rounded-md hover:cursor-pointer" 
         src = "/icons/facebook.png" 
         width = {32} 
         height = {32} 
         alt= "facebook" 
         />
         <Image 
-        className="h-[30px] w-full rounded-md hover:cursor-pointer" 
+        className="h-auto w-full rounded-md hover:cursor-pointer" 
         src = "/icons/linkedin.png" 
         width = {32} 
         height = {32} 
         alt= "linkedin" 
         />
         <Image 
-        className="h-[30px] w-full rounded-md hover:cursor-pointer" 
+        className="h-auto w-full rounded-md hover:cursor-pointer" 
         src = "/icons/telegram.png" 
         width = {32} 
         height = {32} 

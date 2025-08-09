@@ -1,5 +1,4 @@
-// pages/movies/search.tsx
-import { useEffect, useState, useRef, ChangeEvent } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import SearchBar from '@/components/common/SearchBar';
@@ -43,7 +42,7 @@ export default function SearchPage() {
   return () => {
     document.removeEventListener('mousedown', handleClickOutside);
   };
-}, [showGenres]);
+}, [router]);
 
 
   const buildUrl = () => {
@@ -60,11 +59,11 @@ export default function SearchPage() {
 
 
   const handleSearch = (term: string) => {
-    router.push(`/movies/search?query=${encodeURIComponent(term)}&page=1`);
+    router.push(`/movies/SearchPage?query=${encodeURIComponent(term)}&page=1`);
   };
 
   const handleGenreClick = (genre: string) => {
-    router.push(`/movies/search?genre=${genre}&page=1`);
+    router.push(`/movies/SearchPage?genre=${genre}&page=1`);
     setShowGenres(false);
   };
 
@@ -79,7 +78,7 @@ export default function SearchPage() {
   return (
     <div>
       <Header />
-      <div className="p-6 space-y-6" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
+      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
       <SearchBar  onSearch={handleSearch} />
       
       <div className="relative">

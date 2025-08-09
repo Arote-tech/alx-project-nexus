@@ -1,30 +1,58 @@
-// components/SettingsMenu.tsx
 'use client';
 import Image from "next/image"
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function SettingsMenu() {
   const [open, setOpen] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
 
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEsc);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEsc);
+    };
+
+  }, []);
+
+
   return (
-    <div className="relative inline-block text-left">
-      {/* Settings Icon */}
+    <div className="relative justify-end w-full h-15 inline-block text-left">
       <button
         onClick={() => setOpen(!open)}
         className="rounded-full bg-[#151515]"
         aria-label="Settings"
       >
         
-        <Image className="h-[30px] w-full rounded-md hover:cursor-pointer transition-discrete duration-200 ease-in" src = "/icons/settings.png" width = {32} height = {32} alt= "setting" />
+        <Image 
+        className="w-full h-auto hover:cursor-pointer transition-discrete duration-200 ease-in" 
+        src = "/icons/settings.png" 
+        width = {32} 
+        height = {32} 
+        alt= "setting"
+        />
     
       </button>
 
-      {/* Dropdown Panel */}
       {open && (
         <div className="absolute right-0 z-20 mt-2 w-56 bg-white border rounded-md shadow-lg p-4 space-y-4">
-          {/* Toggle Notifications */}
           <div className="flex items-center justify-between">
             <span className="text-sm">Enable Notifications</span>
             <label className="inline-flex items-center cursor-pointer">
@@ -40,10 +68,9 @@ export default function SettingsMenu() {
             </label>
           </div>
 
-          {/* About Us Link */}
           <div>
             <Link
-              href="/contact#about-us"
+              href="/movies/contact"
               className="text-sm text-blue-600 hover:underline block"
               onClick={() => setOpen(false)}
             >

@@ -4,10 +4,20 @@ import { useRouter } from 'next/router';
 
 const MovieCard: React.FC<MovieCardProps> = ({ Movie }) => {
    const router = useRouter();
+   console.log(router);
+
   return (
-    <div className="h-[563px] onClick={() => router.push(`/movies/${movie.id}`)} cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+    <div className="h-[563px] cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" 
+      // onClick={() => router.push(/movies/${Movie.id})} 
+    >
       <div>
-        <Image className="h-[430px] w-full rounded-md hover:cursor-pointer" src={Movie.poster_Path} width={100} height={100} alt={Movie.title || "/icons/film.png"} />
+        <Image className="h-[430px] w-full rounded-md hover:cursor-pointer" 
+        src={`{https://moviesdatabase.p.rapidapi.com${Movie.poster_Path}}`} 
+        width={400} 
+        height={350} 
+        alt={Movie.title || "/icons/film.png"} 
+        onError={(e) => console.error("Image load error", e)}
+        />
 
       </div>
       <div className="flex justify-between py-4">
