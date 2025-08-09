@@ -8,15 +8,15 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800 bg-hour-glass bg-cover bg-no-repeat">
+      <div className="max-w-md mx-auto min-h-screen px-6 py-12 text-gray-800 bg-hour-glass bg-cover bg-no-repeat">
         <section id="about-us" className="space-y-3">
           <h2 className="text-xl font-semibold">About Us</h2>
           <p>
             Welcome to MoviePro — your personal movie companion.
-            We help users discover, rate, and organize movies they'll love, using intelligent recommendations and sleek design.
+            We help users discover, rate, and organize movies they will love, using intelligent recommendations and sleek design.
           </p>
           <p>
-            Our goal is to make movie discovery seamless and social. Whether you're looking for something to watch tonight or building a curated watchlist, we're here to help.
+            Our goal is to make movie discovery seamless. Whether you&aposre looking for something to watch tonight or building a curated watchlist, we are here to help.
           </p>
           <p>
             Built with 💙 by a passionate team of developers and film lovers.
