@@ -1,13 +1,12 @@
-// utils/api.ts
 import axios from 'axios';
 
 
-export const fetcher = async (): Promise<any> => {
+export const fetcher = async (id: string): Promise<any> => {
   const options = {
     method: 'GET',
-    url: 'https://moviesdatabase.p.rapidapi.com/titles',
+    url:`https://moviesdatabase.p.rapidapi.com/titles/${id}/main_actors`,
     headers: {
-      'X-RapidAPI-Key': '0e90247051msh302083b5c7ca9bbp1c48ddjsnad8371b50aff',
+      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY || "",
       'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
     },
   };
