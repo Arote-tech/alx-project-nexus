@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Header from "@/components/layouts/Header"
 import Footer from "@/components/layouts/Footer"
 import CustomLinks from "@/components/common/CustomLinks"
@@ -9,7 +8,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Header />
-      <div className="p-6 space-y-6" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
+      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
         <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
         <h1 className="text-lg font-bold mb-6 text-[#303132]">Privacy Policy</h1>
         <p className="text-sm text-gray-500 mb-6">Effective Date: August 4, 2025</p>
@@ -54,7 +53,7 @@ export default function PrivacyPolicy() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">7. Children's Privacy</h2>
+          <h2 className="text-xl font-semibold mb-2">7. Children&apos;s Privacy</h2>
           <p>Our service is not directed at children under 13. We do not knowingly collect data from them.</p>
         </section>
 
@@ -70,7 +69,9 @@ export default function PrivacyPolicy() {
         </section>
       </div>
     </div>
-    <CustomLinks />
+    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
+      <CustomLinks />
+    </div>
     <Footer />    
     </>
   );

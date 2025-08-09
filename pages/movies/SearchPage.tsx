@@ -53,7 +53,7 @@ export default function SearchPage() {
     return `/api/trending?${params.toString()}`;
   };
 
-  const { data, isLoading } = useSWR(buildUrl(), fetcher);
+  const { data:movies, isLoading } = useSWR(buildUrl(), fetcher);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -88,7 +88,7 @@ export default function SearchPage() {
         >
           <span>{selectedGenre ? selectedGenre : 'Select Genre'}</span>
           <Image
-            src="/icons/down.png"
+            src="/icons/down-256x256.png"
             alt="Genre Dropdown Icon"
             width={16}
             height={16}
@@ -134,7 +134,9 @@ export default function SearchPage() {
         </button>
       </div>
     </div>
-    <CustomLinks />
+    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
+      <CustomLinks />
+    </div>
     <Footer />
   </div>  
   );

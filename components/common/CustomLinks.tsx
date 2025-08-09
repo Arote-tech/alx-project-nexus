@@ -11,7 +11,7 @@ export default function CustomLinks () {
             <Link href="/movies/Home" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
-            src = "/icons/home.png"
+            src = "/icons/home-256x256.png"
             width = {32} 
             height = {32} 
             alt= "home icon"
@@ -22,7 +22,7 @@ export default function CustomLinks () {
             <Link href="/movies/ContactPage" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
-            src = "/icons/phone-ringing.png" 
+            src = "/icons/phone-256x256.png" 
             width = {32} 
             height = {32} 
             alt= "make a call" 
@@ -33,7 +33,7 @@ export default function CustomLinks () {
             <Link href="/movies/PrivacyPolicy" className= "text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
-            src = "/icons/insurance.png"
+            src = "/icons/insurance-256x256.png"
             width = {32}
             height = {32} 
             alt= "terms of use" 
@@ -44,7 +44,7 @@ export default function CustomLinks () {
             <Link href="/movies/Profile" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
-            src = "/icons/user.png" 
+            src = "/icons/user-256x256.png" 
             width = {32} 
             height = {32} 
             alt= "profile page" 

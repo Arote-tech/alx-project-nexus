@@ -1,4 +1,3 @@
-// pages/index.tsx
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession } from "next-auth/react";
@@ -13,7 +12,6 @@ import CustomLinks from "@/components/common/CustomLinks";
 import { MovieApiResponse } from '@/types/index';
 
 
-const genres = ['Action', 'Drama', 'Comedy', 'Historical', 'Fantasy'];
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -22,30 +20,35 @@ export default function HomeScreen() {
   const handleSearch = (term: string) => {
     if (term.trim()) {
       router.push(`/movies/search?query=${encodeURIComponent(term)}`);
+
     }
   };
 
   const handleGenreClick = (genre: string) => {
     router.push(`/movies/search?genre=${genre}`);
   };
+  const trendingId = 'tt011161';
+  const recommendedId = 'tt0068646';      
 
-  const { data: trendingData, isLoading: loadingTrending } = useSWR<MovieApiResponse>('https://moviesdatabase.p.rapidapi.com/titles', fetcher);
-  const { data: recommendedData, isLoading: loadingRecommended } = useSWR<MovieApiResponse>('https://moviesdatabase.p.rapidapi.com//titles/%7Bid%7D/ratings', fetcher);
+  const { data: trendingData, isLoading: loadingTrending } = useSWR<MovieApiResponse>(`https://moviesdatabase.p.rapidapi.com/titles/${trendingId}/main_actors`, fetcher);
+  const { data: recommendedData, isLoading: loadingRecommended } = useSWR<MovieApiResponse>(`https://moviesdatabase.p.rapidapi.com/titles/${recommendedId}/main_actors`, fetcher);
   
   useEffect(() => {
     if (status === "unauthenticated") {
       router.push("/");
     }
-  }, [status]);
+  }, [router]);
 
   if (status === "loading") {
     return <div>Loading...</div>;
   }
 
+  const genres = ['Action', 'Drama', 'Comedy', 'Historical', 'Fantasy'];
+
   return (
     <div>
       <Header />
-      <div className="p-6 space-y-6" style = {{backgroundImage: `url('/images/hour-glass.jpg')`}}>
+      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
       <SearchBar onSearch={handleSearch} />
 
       <div className="flex gap-3 overflow-x-auto pt-2">
@@ -73,10 +76,13 @@ export default function HomeScreen() {
         <p>Loading recommended...</p>
       ) : (
         <MovieCarousel movies={recommendedData?.results || []} />
-      )}
+      )
+      }
 
     </div>
-    <CustomLinks />
+    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
+      <CustomLinks />
+    </div>
     <Footer />
 
   </div>

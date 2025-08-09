@@ -6,21 +6,23 @@ import { signOut } from "next-auth/react";
 
 const Header: React.FC = () => {
   return (
-    <header className="h-18 w-auto flex justify-between align-bottom bg-black/70 backdrop-blur-sm  px-4 md:px-16 lg:px-44">
-      <div className="h-auto w-full justify-self-start hover:cursor-pointer transition-colors duration-300 ease-out">
+    <header className="h-18 w-auto flex justify-between align-bottom bg-black backdrop-blur-sm  px-4 md:px-16 lg:px-44">
+      <div className="h-15 w-full justify-self-start hover:cursor-pointer transition-colors duration-300 ease-out">
           <Image 
           className="w-full h-auto hover:cursor-pointer" 
-          src = "/icons/clapper-open.png" 
+          src = "/icons/clapper-open-256x256.png" 
           width = {32} 
           height = {32} 
           alt= "Movie Pro logo" 
           />
-          <h2 className="text-2xl md:text-xl font-semibold text-[#FA0C10]">Movie<span className="text-[#096BCD] font-metalmania">
-          Pro
-          </span>
+          <h2 className="text-4xl md:text-xl font-semibold text-[#FA0C10]">
+            Movie
+            <span className="text-[#096BCD] font-metalmania text-4xl md:text-xl">
+            Pro
+            </span>
           </h2>
       </div>
-      <div className="flex h-15 justify-between w-full items-center space-x-2">
+      <div className="flex h-15 justify-end w-full items-center space-x-2">
         <div>
           <SettingsMenu />
         </div>
