@@ -8,10 +8,11 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Header />
-      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
-        <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
-        <h1 className="text-lg font-bold mb-6 text-[#303132]">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 mb-6">Effective Date: August 4, 2025</p>
+      <div className="bg-hour-glass">
+        <div className="p-8 mx-auto min-h-screen space-y-4">
+        <div className="m-auto mx-16 justify-center px-12 py-6 text-gray-800">
+        <h1 className="text-3xl font-bold justify-center text-[#303132]">Privacy Policy</h1>
+        <p className="text-lg text-gray-500 mb-6">Effective Date: August 4, 2025</p>
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2">1. Information We Collect</h2>
@@ -65,14 +66,14 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="text-xl font-semibold mb-2">9. Contact Us</h2>
           <p>If you have questions about this policy, reach out:</p>
-          <p className="mt-2">📧 <strong>your-support@email.com</strong></p>
+          <p className="mt-2">📧 <strong>giroprojectcourses@gmail.com</strong></p>
         </section>
       </div>
     </div>
-    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
       <CustomLinks />
     </div>
-    <Footer />    
+      
+      <Footer />    
     </>
   );
 }

@@ -20,13 +20,14 @@ export default function OnboardingPage() {
     <div >
       <Header />
       <div className ="bg-twilight">
-        <div className="p-4 max-w-md mx-auto space-y-4 min-h-screen bg-cover bg-center bg-no-repeat">
+        <div className="mx-auto align-center space-y-4 min-h-screen p-6 bg-opacity-80 rounded-lg shadow-lg">
         <h1>Welcome back, {session?.user?.name || "user"}!</h1>
-        <div>
-        <h1 className="text-xl font-bold text-[#F0F1F5]">
+        <div className="mx-auto space-y-2 max-w-2xl p-6 bg-opacity-80 rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold text-[#F0F1F5]">
           Discover the next blockbuster for you!
         </h1>
-        <h4 className="text-lg font-merienda text-[#F0F1F5]">
+        <div className="mx-auto max-w-2xl p-6 m-2 bg-opacity-80 rounded-lg shadow-lg">
+          <h4 className="text-lg font-merienda text-[#F0F1F5]">
      Click <span className="text-md font-merienda text-[#E9F909]">on the button below and 
     make a choice among over a </span><span className="text-md font-merienda text-[#F90909]">hundred 
    movies to watch.</span>      
@@ -36,9 +37,11 @@ export default function OnboardingPage() {
           Browse Movies
           </button>
         </Link>
-      </div>
+        </div>
+       </div>
+        
 
-       <div>
+       <div className="mx-auto space-y-4 max-w-2xl p-6 bg-opacity-80 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold text-[#F0F1F5]">Join MoviePro Now!</h2>
         <h4 className="text-md font-merienda text-[#5BFF5D]">
           Sign Up today to get access to the latest movies 
@@ -54,7 +57,7 @@ and personalized movie recommendations
        </div>
 
       </div>
-      </div>
+    </div>
       
       <Footer />
 

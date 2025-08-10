@@ -17,27 +17,23 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   };
 
   return (
-    <div className="flex gap-2 max-w-md h-8 m-2 mx-auto rounded justify-center">
-      <form onSubmit={handleSubmit}>
-        <div className="flex gap-2 w-full text-sm text-black m-2 hover:bg-gray-100 hover:text-black">
-        <Image 
-        className="h-[430px] w-full rounded-md hover:cursor-pointer"
-        src="/icons/search-256x256.png" 
-        width={20} 
-        height={20} 
-        alt="search icon" 
-        />
+      <form onSubmit={handleSubmit} className="flex w-115 h-15 text-sm rounded-3xl border-g-200 bg-gray-100 text-black p-4 hover:bg-gray-300 hover:text-black">
+          <Image 
+            className="rounded-md hover:cursor-pointer"
+            src="/icons/search-256x256.png" 
+            width={12} 
+            height={12} 
+            alt="search icon" 
+          />
       <input
         type="text"
         value={term}
         onChange={(e) => setTerm(e.target.value)}
         placeholder="Search..."
-        className="p-2 border-yellow-200 w-full bg-gray-200 "
+        className="p-2 w-full bg-transparent outline-none"
       />
-        </div>
       </form>
-
-    </div>  
+  
   );
 }
 

@@ -8,9 +8,10 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <div className="max-w-md mx-auto min-h-screen px-6 py-12 text-gray-800 bg-hour-glass bg-cover bg-no-repeat">
+      <div className="bg-hour-glass">
+        <div className="mx-auto justify-center w-200 min-h-screen px-6 my-6 text-gray-800">
         <section id="about-us" className="space-y-3">
-          <h2 className="text-xl font-semibold">About Us</h2>
+          <h2 className="text-3xl font-bold">About Us</h2>
           <p>
             Welcome to MoviePro — your personal movie companion.
             We help users discover, rate, and organize movies they will love, using intelligent recommendations and sleek design.
@@ -23,15 +24,18 @@ export default function ContactPage() {
           </p>
         </section>
         
-        <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-        <section className="mb-10 space-y-3">
+        <div className="mb-3 p-4 items-center justify-center">
+          <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+        <section className="mb-4 space-y-3 ">
           <h2 className="text-xl font-semibold">Reach Us</h2>
           <p>📞 Phone: <a href="tel:+2348117456197" className="text-blue-600 hover:underline">+234-81-1745-6197</a></p>
           <p>💬 WhatsApp: <a href="https://wa.me/2347033829976" className="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">+234-70-3382-9976</a></p>
         </section>
+        </div>
 
+        </div>
+        <CustomLinks />
       </div>
-      <CustomLinks />
       <Footer />
     </>
   );

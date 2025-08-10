@@ -22,18 +22,19 @@ const Header: React.FC = () => {
             </span>
           </h2>
       </div>
-      <div className="flex h-15 justify-end w-full items-center space-x-2">
+      <div className="flex flex-nowrap h-15 justify-items-start align-bottom items-center space-x-4">
           <SettingsMenu />
-
-        <div>
-          <button onClick={() => signOut()}>Sign out 1</button>
-        </div>     
-        <div className="flex md:hidden">
+        
+        <div className="flex w-full md:hidden">
           <Button title="Sign in" />
         </div>
         <div className="hidden md:flex">
           <Button title="Sign in" />
         </div>
+
+        <div className="flex">
+          <button onClick={() => signOut()}>Sign out 1</button>
+        </div>     
       </div>
     </header>
 

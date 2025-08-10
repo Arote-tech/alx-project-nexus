@@ -17,7 +17,8 @@ export default function ProfilePage() {
   return (
     <div>
       <Header />
-      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
+      <div className="bg-hour-glass">
+        <div className="p-4 max-w-md mx-auto min-h-screen space-y-4">
       <h1 className="text-3xl font-bold mb-4">Your Profile</h1>
 
       <section>
@@ -47,7 +48,6 @@ export default function ProfilePage() {
         )}
       </section>
     </div>
-    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
       <CustomLinks />
     </div>
     <Footer />

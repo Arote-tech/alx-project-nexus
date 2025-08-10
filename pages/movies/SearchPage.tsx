@@ -81,8 +81,7 @@ export default function SearchPage() {
     <div>
       <Header />
       <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
-      <SearchBar  onSearch={handleSearch} />
-      
+        <SearchBar  onSearch={handleSearch} />
       <div className="relative">
         <button
           onClick={() => setShowGenres(!showGenres)}

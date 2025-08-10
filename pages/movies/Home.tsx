@@ -11,6 +11,7 @@ import Footer from "@/components/layouts/Footer";
 import CustomLinks from "@/components/common/CustomLinks";
 import { MovieApiResponse } from '@/types/index';
 
+const genres = ['Action', 'Drama', 'Comedy', 'Historical', 'Fantasy'];
 
 
 export default function HomeScreen() {
@@ -33,37 +34,37 @@ export default function HomeScreen() {
   const { data: trendingData, isLoading: loadingTrending } = useSWR<MovieApiResponse>(`https://moviesdatabase.p.rapidapi.com/titles/${trendingId}/main_actors`, fetcher);
   const { data: recommendedData, isLoading: loadingRecommended } = useSWR<MovieApiResponse>(`https://moviesdatabase.p.rapidapi.com/titles/${recommendedId}/main_actors`, fetcher);
   
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/");
-    }
-  }, [router, status]);
+  // useEffect(() => {
+  //   if (status === "unauthenticated") {
+  //     router.push("/");
+  //   }
+  // }, [router, status]);
 
   if (status === "loading") {
     return <div>Loading...</div>;
   }
 
-  const genres = ['Action', 'Drama', 'Comedy', 'Historical', 'Fantasy'];
-
   return (
     <div>
       <Header />
-      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4 bg-hour-glass bg-cover bg-no-repeat">
-      <SearchBar onSearch={handleSearch} />
+      <div className ="bg-hour-glass bg-cover bg-no-repeat">
 
+      <div className="p-4 max-w-md mx-auto min-h-screen space-y-4">
+        <SearchBar onSearch={handleSearch} />
       <div className="flex gap-3 overflow-x-auto pt-2">
         {genres.map((genre) => (
           <button
             key={genre}
             onClick={() => handleGenreClick(genre)}
-            className="bg-blue-600 text-white px-4 py-2 rounded whitespace-nowrap hover:bg-blue-700"
+            className="bg-blue-600 text-white px-2 py-2 rounded whitespace-nowrap hover:bg-blue-700"
           >
             {genre}
           </button>
         ))}
       </div>
-      <h1>Welcome back, {session?.user?.name || "user"}!</h1>
-      <h2 className="text-xl font-semibold mt-4">Trending Movies</h2>
+      <div className="text-xl font-bold mx-auto space-y-6">
+        <h1>Welcome back, {session?.user?.name || "user"}!</h1>
+        <h2 className="text-xl font-semibold mt-4">Trending Movies</h2>
       {loadingTrending ? (
         <p>Loading trending...</p>
       ) : (
@@ -78,11 +79,15 @@ export default function HomeScreen() {
         <MovieCarousel movies={recommendedData?.results || []} />
       )
       }
+      </div>
+      
 
     </div>
-    <div className="mx-w-md mx-auto h-5 p-4 rounded-lg shadow-md">
+
       <CustomLinks />
-    </div>
+
+  </div>
+      
     <Footer />
 
   </div>

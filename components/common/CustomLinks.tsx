@@ -5,10 +5,10 @@ import Image from "next/image"
 
 export default function CustomLinks () {
     return (
-        <div>
-          <nav className="flex-1 flex justify-center space-x-6 mb-4 md:mb-0">
+        <div className="flex flex-nowrap items-center justify-evenly shadow-md">
+          <nav className="flex-1 flex w-10 justify-evenly space-x-6 mb-4 md:mb-0">
             
-            <Link href="/movies/Home" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
+            <Link href="/movies/Home" className="flex text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
             src = "/icons/home-256x256.png"
@@ -19,7 +19,7 @@ export default function CustomLinks () {
             Home
             </Link>
             
-            <Link href="/movies/ContactPage" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
+            <Link href="/movies/ContactPage" className="flex text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
             src = "/icons/phone-256x256.png" 
@@ -30,7 +30,7 @@ export default function CustomLinks () {
             Contact
             </Link>
             
-            <Link href="/movies/PrivacyPolicy" className= "text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
+            <Link href="/movies/PrivacyPolicy" className= "flex text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
             className="width-100% h-auto hover:cursor-pointer" 
             src = "/icons/insurance-256x256.png"
@@ -41,9 +41,9 @@ export default function CustomLinks () {
             Privacy Policy
             </Link>
             
-            <Link href="/movies/Profile" className="text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
+            <Link href="/movies/Profile" className="flex text-md text-[#63B16D] hover:text-[#E2D609] text-lg transition-colors duration-300">
             <Image 
-            className="width-100% h-auto hover:cursor-pointer" 
+            className="flex width-100% h-auto hover:cursor-pointer" 
             src = "/icons/user-256x256.png" 
             width = {32} 
             height = {32} 
