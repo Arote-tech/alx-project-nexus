@@ -43,7 +43,7 @@ export default function SettingsMenu() {
         
         <Image 
         className="w-full h-auto hover:cursor-pointer transition-discrete duration-200 ease-in" 
-        src = "/icons/settings.png" 
+        src = "/icons/settings-256x256.png" 
         width = {32} 
         height = {32} 
         alt= "setting"

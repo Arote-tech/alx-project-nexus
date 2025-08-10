@@ -14,28 +14,28 @@ const Footer: React.FC = () => {
         <Link href="/">
         <Image 
         className="h-auto w-full rounded-md hover:cursor-pointer" 
-        src = "/icons/github.png" 
+        src = "/icons/github-256x256.png" 
         width = {32} 
         height = {32} 
         alt= "github" />
         </Link>
         <Image 
         className="h-auto w-full rounded-md hover:cursor-pointer" 
-        src = "/icons/facebook.png" 
+        src = "/icons/facebook-256x256.png" 
         width = {32} 
         height = {32} 
         alt= "facebook" 
         />
         <Image 
         className="h-auto w-full rounded-md hover:cursor-pointer" 
-        src = "/icons/linkedin.png" 
+        src = "/icons/linkedin-256x256.png" 
         width = {32} 
         height = {32} 
         alt= "linkedin" 
         />
         <Image 
         className="h-auto w-full rounded-md hover:cursor-pointer" 
-        src = "/icons/telegram.png" 
+        src = "/icons/telegram-256x256.png" 
         width = {32} 
         height = {32} 
         alt= "telegram" 

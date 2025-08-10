@@ -22,7 +22,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         <div className="flex gap-2 w-full text-sm text-black m-2 hover:bg-gray-100 hover:text-black">
         <Image 
         className="h-[430px] w-full rounded-md hover:cursor-pointer"
-        src="/icons/search.png" 
+        src="/icons/search-256x256.png" 
         width={20} 
         height={20} 
         alt="search icon" 

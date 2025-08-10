@@ -19,7 +19,8 @@ export default function OnboardingPage() {
   return (
     <div >
       <Header />
-      <div className="p-4 max-w-md mx-auto space-y-4 min-h-screen bg-Twilight bg-cover bg-center bg-no-repeat">
+      <div className ="bg-twilight">
+        <div className="p-4 max-w-md mx-auto space-y-4 min-h-screen bg-cover bg-center bg-no-repeat">
         <h1>Welcome back, {session?.user?.name || "user"}!</h1>
         <div>
         <h1 className="text-xl font-bold text-[#F0F1F5]">
@@ -53,6 +54,8 @@ and personalized movie recommendations
        </div>
 
       </div>
+      </div>
+      
       <Footer />
 
     </div>

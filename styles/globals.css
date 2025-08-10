@@ -1,7 +1,14 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+@theme {
+  --background-image-hour-glass: url('/images/hour-glass.jpg');
+  --background-image-earth-drought: url('/images/earth-drought.jpg');
+  --background-image-nature-drought: url('/images/nature-drought.jpg');
+  --background-image-twilight: url('/images/Twilight.jpg');
+}
+
 
 
