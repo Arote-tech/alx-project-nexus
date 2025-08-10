@@ -2,19 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/download/[filename]": "pages/api/download/[filename].js",
-  "/api/hello": "pages/api/hello.js",
-  "/api/fetch-movies": "pages/api/fetch-movies.js",
-  "/movies/ContactPage": "pages/movies/ContactPage.js",
-  "/api/trending": "pages/api/trending.js",
-  "/api/recommended": "pages/api/recommended.js",
-  "/": "pages/index.js",
-  "/movies/Home": "pages/movies/Home.js",
-  "/movies/MovieDetails": "pages/movies/MovieDetails.js",
-  "/movies/PrivacyPolicy": "pages/movies/PrivacyPolicy.js",
-  "/movies/SearchPage": "pages/movies/SearchPage.js",
-  "/movies/Sign-In": "pages/movies/Sign-In.js",
-  "/movies/Profile": "pages/movies/Profile.js",
-  "/movies/Sign-Up": "pages/movies/Sign-Up.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
+  "/": "pages/index.js"
 }
