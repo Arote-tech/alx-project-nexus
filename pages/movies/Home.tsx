@@ -37,7 +37,7 @@ export default function HomeScreen() {
     if (status === "unauthenticated") {
       router.push("/");
     }
-  }, [router]);
+  }, [router, status]);
 
   if (status === "loading") {
     return <div>Loading...</div>;

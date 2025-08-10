@@ -15,7 +15,7 @@ export default function OnboardingPage() {
     if (status === "authenticated") {
       router.push("/movies/Home");
     }
-  }, [status]);
+  }, [router, status]);
   return (
     <div >
       <Header />

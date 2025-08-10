@@ -8,6 +8,7 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import CustomLinks from "@/components/common/CustomLinks";
 import Image from "next/image";
+import { MovieApiResponse } from '@/types';
 
 
 
@@ -42,7 +43,7 @@ export default function SearchPage() {
   return () => {
     document.removeEventListener('mousedown', handleClickOutside);
   };
-}, [router]);
+}, [router, showGenres]);
 
 
   const buildUrl = () => {
@@ -53,7 +54,8 @@ export default function SearchPage() {
     return `/api/trending?${params.toString()}`;
   };
 
-  const { data:movies, isLoading } = useSWR(buildUrl(), fetcher);
+  const { data: Movies, isLoading } = useSWR<MovieApiResponse>(buildUrl(), fetcher);
+  console.log('Movie Data:', Movies);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
