@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           <SettingsMenu />
 
         <div>
-          <button onClick={() => signOut()}>Sign out</button>
+          <button onClick={() => signOut()}>Sign out 1</button>
         </div>     
         <div className="flex md:hidden">
           <Button title="Sign in" />
