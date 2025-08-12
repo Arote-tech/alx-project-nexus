@@ -20,13 +20,13 @@ export default function OnboardingPage() {
     <div >
       <Header />
       <div className ="bg-twilight">
-        <div className="mx-auto align-center space-y-4 min-h-screen p-6 bg-opacity-80 rounded-lg shadow-lg">
-        <h1>Welcome back, {session?.user?.name || "user"}!</h1>
-        <div className="mx-auto space-y-2 max-w-2xl p-6 bg-opacity-80 rounded-lg shadow-lg">
+        <div className="mx-auto align-center space-y-4 min-h-screen p-6">
+        <h1 className ="text-white ml-150 flex text-2xl font-semibold">Welcome back {session?.user?.name || "user"}!</h1>
+        <div className="mx-auto space-y-2 max-w-4xl p-6 bg-opacity-80 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-[#F0F1F5]">
           Discover the next blockbuster for you!
         </h1>
-        <div className="mx-auto max-w-2xl p-6 m-2 bg-opacity-80 rounded-lg shadow-lg">
+        <div>
           <h4 className="text-lg font-merienda text-[#F0F1F5]">
      Click <span className="text-md font-merienda text-[#E9F909]">on the button below and 
     make a choice among over a </span><span className="text-md font-merienda text-[#F90909]">hundred 
