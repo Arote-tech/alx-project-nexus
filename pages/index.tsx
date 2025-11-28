@@ -6,7 +6,6 @@ import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
 
 
-
 export default function OnboardingPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -19,7 +18,7 @@ export default function OnboardingPage() {
   return (
     <div >
       <Header />
-      <div className ="bg-twilight">
+      <div className="onboarding-bg">
         <div className="mx-auto align-center space-y-4 min-h-screen p-6">
         <h1 className ="text-white ml-150 flex text-2xl font-semibold">Welcome back {session?.user?.name || "user"}!</h1>
         <div className="mx-auto space-y-2 max-w-4xl p-6 bg-opacity-80 rounded-lg shadow-lg">

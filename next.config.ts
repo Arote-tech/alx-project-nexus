@@ -1,15 +1,20 @@
 import withPWAInit from "@ducanh2912/next-pwa";
-
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from 'next';
 
 const withPWA = withPWAInit({
   dest: 'public'
 })
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
+  turbopack: {},
   images: {
-    domains: ['moviesdatabase.p.rapidapi.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'moviesdatabase.p.rapidapi.com',
+      },
+    ],
   },
 };
 
